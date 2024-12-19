@@ -9,11 +9,4 @@ vim.keymap.set(
   { desc = "Show and copy file relative path" }
 )
 
-local telescope = require("telescope.builtin")
-vim.keymap.set("n", "<leader>sf", function()
-  telescope.live_grep({
-    additional_args = function()
-      return { "--fixed-strings" }
-    end,
-  })
-end, { desc = "Search with fixed strings (no regex)" })
+vim.keymap.set("n", "<leader>o", ":!open %<CR>", { desc = "Open file in browser" })
